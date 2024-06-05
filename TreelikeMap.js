@@ -33,9 +33,13 @@ class TreelikeMap
 	 *
 	 * @param key {any}
 	 * @param value {any}
-	 * @return {Map<TreelikeMap>}
+	 * @return {TreelikeMap}
 	 */
-	set(key, value) { return this.children.set(key, new TreelikeMap(value, this)); }
+	set(key, value)
+	{
+		this.children.set(key, new TreelikeMap(value, this));
+		return this;
+	}
 
 	/**
 	 *
