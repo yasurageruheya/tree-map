@@ -2,10 +2,10 @@ class TreelikeMap
 {
 	/**
 	 *
-	 * @param value {any}
+	 * @param [value] {any}
 	 * @param [parent] {TreelikeMap}
 	 */
-	constructor(value, parent)
+	constructor(value="", parent)
 	{
 		/** @type {any} */
 		this.value = value;
