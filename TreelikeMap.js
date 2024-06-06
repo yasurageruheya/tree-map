@@ -32,7 +32,7 @@ class TreelikeMap
 	/**
 	 *
 	 * @param key {any}
-	 * @param value {any}
+	 * @param [value] {any}
 	 * @return {TreelikeMap}
 	 */
 	set(key, value)
