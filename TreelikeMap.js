@@ -44,9 +44,14 @@ class TreelikeMap
 	/**
 	 *
 	 * @param key {any}
+	 * @param [all=false] {boolean}
 	 * @return {boolean}
 	 */
-	remove(key) { return this.children.delete(key); }
+	remove(key, all=false)
+	{
+		if(!all) return this.children.delete(key);
+		else this.children.forEach(child => child.remove(key, all));
+	}
 
 	/**
 	 *
