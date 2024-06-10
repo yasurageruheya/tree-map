@@ -49,8 +49,25 @@ class TreelikeMap
 	 */
 	remove(key, all=false)
 	{
-		if(!all) return this.children.delete(key);
-		else this.children.forEach(child => child.remove(key, all));
+		if(!all)
+		{
+			if(this.children.has(key))
+			{
+				const child = this.get(key);
+				child.value = null;
+				delete child.value;
+			}
+			return this.children.delete(key);
+		}
+		else
+		{
+			this.children.forEach(child =>
+			{
+				child.value = null;
+				delete child.value;
+				child.remove(key, all)
+			});
+		}
 	}
 
 	/**
